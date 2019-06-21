@@ -1,0 +1,23 @@
+name: SAP_ZPPLN
+label: 项目代码
+icon: account
+fields:
+  GJAHR:
+    label: 年度
+    type: text
+  VERS:
+    label: 版本
+    type: text
+  NUMB:
+    label: 计划编号
+    type: text
+  KOSB:
+    label: 申报部门
+    type: text
+  NAME:
+    label: 项目名称
+    type: text
+    is_name: true
+  ZNUMB_S:
+    label: 计划号缩写
+    type: text

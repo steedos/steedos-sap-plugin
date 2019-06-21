@@ -1,0 +1,11 @@
+name: SAP_T023T
+label: 物料组
+icon: account
+fields:
+  MATKL:
+    label: 物料组
+    type: text
+    is_name: true
+  WGBEZ:
+    label: 物料组描述
+    type: text
