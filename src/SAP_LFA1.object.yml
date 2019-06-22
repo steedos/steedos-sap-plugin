@@ -5,6 +5,7 @@ fields:
   LIFNR:
     label: 供应商帐号
     type: text
+    index: true
   NAME1:
     label: 名称1
     type: text

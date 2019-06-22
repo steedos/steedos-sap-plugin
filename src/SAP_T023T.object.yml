@@ -6,6 +6,7 @@ fields:
     label: 物料组
     type: text
     is_name: true
+    index: true
   WGBEZ:
     label: 物料组描述
     type: text

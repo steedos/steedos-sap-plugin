@@ -11,6 +11,7 @@ fields:
   NUMB:
     label: 计划编号
     type: text
+    index: true
   KOSB:
     label: 申报部门
     type: text

@@ -15,4 +15,4 @@ public:
     local:
       folder: "/storage"
 cron:
-  sap_sync_interval: 10000
+  -sap_sync_rule: "0 * * * *" 
