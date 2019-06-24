@@ -23,38 +23,43 @@ server.Fiber(function () {
 
             // 自定义业务逻辑
             let steedosSchema = objectql.getSteedosSchema();
+            let abapSystem = Meteor.settings.plugins.sap.abapConfig;
+            let spaceId = Meteor.settings.plugins.sap.spaceId;
 
-            // 定时执行统计
-            var rule = Meteor.settings.cron.sap_sync_rule;
+            // 定时执行同步
+            let sap_sync_rule = Meteor.settings.cron.sap_sync_rule;
 
-            if (rule) {
+            let sap_get_draft_rule = Meteor.settings.cron.sap_get_draft_rule;
 
-                var abapSystem = {
-                    user: 'xxxxxx',
-                    passwd: '123456',
-                    ashost: '172.172.172.172',
-                    sysnr: '00',
-                    client: '300',
-                    lang: 'ZH',
-                };
-                schedule.scheduleJob(rule, Meteor.bindEnvironment(function () {
+            if (sap_sync_rule) {
+                schedule.scheduleJob(sap_sync_rule, Meteor.bindEnvironment(function () {
                     console.time('sap_sync_rule');
                     // 获取项目代码
-                    ZMM_PO_AFNAM.run(abapSystem, steedosSchema)
+                    ZMM_PO_AFNAM.run(abapSystem, steedosSchema, spaceId);
                     // 获取供应商
-                    ZMM_PO_LIFNR.run(abapSystem, steedosSchema)
+                    ZMM_PO_LIFNR.run(abapSystem, steedosSchema, spaceId);
                     // 获取物料组
-                    ZMM_PO_MATKL.run(abapSystem, steedosSchema)
-
+                    ZMM_PO_MATKL.run(abapSystem, steedosSchema, spaceId);
 
                     console.timeEnd('sap_sync_rule');
-
-
                 }, function () {
                     console.log('Failed to bind environment');
                 }));
             } else {
                 console.error('need to config settings.cron.sap_sync_rule!!!')
+            }
+
+            if (sap_get_draft_rule) {
+                schedule.scheduleJob(sap_get_draft_rule, Meteor.bindEnvironment(function () {
+                    console.time('sap_get_draft_rule');
+                    
+
+                    console.timeEnd('sap_get_draft_rule');
+                }, function () {
+                    console.log('Failed to bind environment');
+                }));
+            } else {
+                console.error('need to config settings.cron.sap_get_draft_rule!!!')
             }
         } catch (error) {
             console.log(error)

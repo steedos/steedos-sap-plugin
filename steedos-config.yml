@@ -16,3 +16,14 @@ public:
       folder: "/storage"
 cron:
   -sap_sync_rule: "0 * * * *" 
+  -sap_get_draft_rule: "0 * * * *" 
+plugins:
+  sap:
+    abapConfig:
+      user: 'xxxxxx'
+      passwd: '123456'
+      ashost: '172.172.172.172'
+      sysnr: '00'
+      client: '300'
+      lang: 'ZH'
+    spaceId: 'xxxxxxxxxxxx'
