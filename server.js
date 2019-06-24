@@ -8,6 +8,10 @@ const ZMM_PO_AFNAM = require('./lib/ZMM_PO_AFNAM');
 const ZMM_PO_LIFNR = require('./lib/ZMM_PO_LIFNR');
 // 物料组
 const ZMM_PO_MATKL = require('./lib/ZMM_PO_MATKL');
+// 获取用款单
+const ZMM_ZOBJNR_GET = require('./lib/ZMM_ZOBJNR_GET');
+// 获取PR行项目,物料
+const Z_BAPI_REQUISITION_GETITEMSGW = require('./lib/Z_BAPI_REQUISITION_GETITEMSGW');
 server.Fiber(function () {
     server.Profile.run("Server startup", function () {
         server.loadServerBundles();
@@ -20,6 +24,8 @@ server.Fiber(function () {
             apps.forEach(function (app) {
                 Creator.Apps[app._id] = app
             })
+
+            console.log('uuflowManager.create_instance: ', uuflowManager.create_instance);
 
             // 自定义业务逻辑
             let steedosSchema = objectql.getSteedosSchema();
@@ -52,7 +58,10 @@ server.Fiber(function () {
             if (sap_get_draft_rule) {
                 schedule.scheduleJob(sap_get_draft_rule, Meteor.bindEnvironment(function () {
                     console.time('sap_get_draft_rule');
-                    
+                    // 获取用款单
+                    ZMM_ZOBJNR_GET.run(abapSystem, steedosSchema, spaceId)
+                    // 获取PR行项目，物料
+                    Z_BAPI_REQUISITION_GETITEMSGW.run(abapSystem, steedosSchema, spaceId)
 
                     console.timeEnd('sap_get_draft_rule');
                 }, function () {

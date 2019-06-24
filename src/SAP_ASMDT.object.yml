@@ -1,0 +1,14 @@
+name: SAP_ASMDT
+label: 作业编号
+icon: account
+fields:
+  ASNUM:
+    label: 作业编号
+    type: text
+    is_name: true
+  SPRAS:
+    label: 语言代码
+    type: text
+  ASKTX:
+    label: 服务短文本
+    type: text

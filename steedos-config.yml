@@ -15,8 +15,8 @@ public:
     local:
       folder: "/storage"
 cron:
-  -sap_sync_rule: "0 * * * *" 
-  -sap_get_draft_rule: "0 * * * *" 
+  -sap_sync_rule: "0 * * * *"
+  -sap_get_draft_rule: "0 * * * *"
 plugins:
   sap:
     abapConfig:
@@ -27,3 +27,6 @@ plugins:
       client: '300'
       lang: 'ZH'
     spaceId: 'xxxxxxxxxxxx'
+    flow:
+      yongkuandan: 'flowId'
+      wuliao: 'flowId'

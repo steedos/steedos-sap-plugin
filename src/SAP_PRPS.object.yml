@@ -1,0 +1,14 @@
+name: SAP_PRPS
+label: WBS元素
+icon: account
+fields:
+  POSID:
+    label: WBS元素
+    type: text
+    is_name: true
+  POST1:
+    label: 描述
+    type: text
+  PBUKR:
+    label: 公司代码
+    type: text
