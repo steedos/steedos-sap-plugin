@@ -10,3 +10,9 @@ fields:
     label: 名称1
     type: text
     is_name: true
+  KTOKK:
+    label: 供应商账户组
+    type: text
+  TXT30:
+    label: 账户组名称
+    type: text

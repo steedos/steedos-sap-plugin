@@ -27,6 +27,6 @@ plugins:
       client: '300'
       lang: 'ZH'
     spaceId: 'xxxxxxxxxxxx'
-    flow:
+    flows:
       yongkuandan: 'flowId'
       wuliao: 'flowId'
