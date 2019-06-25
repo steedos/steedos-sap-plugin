@@ -31,9 +31,6 @@ server.Fiber(function () {
 
 
             let steedosSchema = objectql.getSteedosSchema();
-            let abapSystem = Meteor.settings.plugins.sap.abapConfig;
-            let spaceId = Meteor.settings.plugins.sap.spaceId;
-            let flows = Meteor.settings.plugins.sap.flows;
 
             // 定时执行同步
             let sap_sync_rule = Meteor.settings.cron.sap_sync_rule;
@@ -44,15 +41,15 @@ server.Fiber(function () {
                 schedule.scheduleJob(sap_sync_rule, Meteor.bindEnvironment(function () {
                     console.time('sap_sync_rule');
                     // 获取项目代码
-                    ZMM_PO_AFNAM.run(abapSystem, steedosSchema, spaceId);
+                    ZMM_PO_AFNAM.run(steedosSchema);
                     // 获取供应商
-                    ZMM_PO_LIFNR.run(abapSystem, steedosSchema, spaceId);
+                    ZMM_PO_LIFNR.run(steedosSchema);
                     // 获取物料组
-                    ZMM_PO_MATKL.run(abapSystem, steedosSchema, spaceId);
+                    ZMM_PO_MATKL.run(steedosSchema);
                     // 获取WBS元素
-                    ZMM_PO_POSID.run(abapSystem, steedosSchema, spaceId);
+                    ZMM_PO_POSID.run(steedosSchema);
                     // 获取作业编号
-                    ZMM_PO_ASNUM.run(abapSystem, steedosSchema, spaceId);
+                    ZMM_PO_ASNUM.run(steedosSchema);
 
                     console.timeEnd('sap_sync_rule');
                 }, function () {
@@ -66,18 +63,9 @@ server.Fiber(function () {
                 schedule.scheduleJob(sap_get_draft_rule, Meteor.bindEnvironment(function () {
                     console.time('sap_get_draft_rule');
                     // 获取用款单
-                    if (flows.yongkuandan) {
-                        ZMM_ZOBJNR_GET.run(abapSystem, spaceId, flows.yongkuandan);
-                    } else {
-                        console.error('server: flows.yongkuandan is null')
-                    }
-
+                    ZMM_ZOBJNR_GET.run();
                     // 获取PR行项目，物料
-                    if (flows.wuliao) {
-                        Z_BAPI_REQUISITION_GETITEMSGW.run(abapSystem, spaceId, flows.wuliao);
-                    } else {
-                        console.error('server: flows.wuliao is null')
-                    }
+                    Z_BAPI_REQUISITION_GETITEMSGW.run();
 
                     console.timeEnd('sap_get_draft_rule');
                 }, function () {
