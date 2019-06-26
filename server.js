@@ -50,7 +50,6 @@ server.Fiber(function () {
                     ZMM_PO_POSID.run(steedosSchema);
                     // 获取作业编号
                     ZMM_PO_ASNUM.run(steedosSchema);
-
                     console.timeEnd('sap_sync_rule');
                 }, function () {
                     console.log('Failed to bind environment');
