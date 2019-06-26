@@ -12,3 +12,18 @@ fields:
   ASKTX:
     label: 服务短文本
     type: text
+list_views:
+  all:
+    label: 所有
+    columns:
+      - ASNUM
+      - SPRAS
+      - ASKTX
+    filter_scope: space
+  recent:
+    label: 最近查看
+    columns:
+      - ASNUM
+      - SPRAS
+      - ASKTX
+    filter_scope: space

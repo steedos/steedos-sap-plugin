@@ -1,9 +1,11 @@
 _id: SAP
 name: SAP
-description: 供应商、物料组、项目代码
+description: 供应商、物料组、项目代码、WBS元素、作业编号
 icon_slds: metrics
 is_creator: true
 objects:
   - SAP_LFA1
   - SAP_T023T
   - SAP_ZPPLN
+  - SAP_PRPS
+  - SAP_ASMDT

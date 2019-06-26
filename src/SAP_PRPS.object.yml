@@ -12,3 +12,18 @@ fields:
   PBUKR:
     label: 公司代码
     type: text
+list_views:
+  all:
+    label: 所有
+    columns:
+      - POSID
+      - POST1
+      - PBUKR
+    filter_scope: space
+  recent:
+    label: 最近查看
+    columns:
+      - POSID
+      - POST1
+      - PBUKR
+    filter_scope: space

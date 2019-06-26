@@ -22,3 +22,24 @@ fields:
   ZNUMB_S:
     label: 计划号缩写
     type: text
+list_views:
+  all:
+    label: 所有
+    columns:
+      - GJAHR
+      - VERS
+      - NUMB
+      - KOSB
+      - NAME
+      - ZNUMB_S
+    filter_scope: space
+  recent:
+    label: 最近查看
+    columns:
+      - GJAHR
+      - VERS
+      - NUMB
+      - KOSB
+      - NAME
+      - ZNUMB_S
+    filter_scope: space

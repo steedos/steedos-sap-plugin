@@ -10,3 +10,16 @@ fields:
   WGBEZ:
     label: 物料组描述
     type: text
+list_views:
+  all:
+    label: 所有
+    columns:
+      - MATKL
+      - WGBEZ
+    filter_scope: space
+  recent:
+    label: 最近查看
+    columns:
+      - MATKL
+      - WGBEZ
+    filter_scope: space

@@ -16,3 +16,20 @@ fields:
   TXT30:
     label: 账户组名称
     type: text
+list_views:
+  all:
+    label: 所有
+    columns:
+      - LIFNR
+      - NAME1
+      - KTOKK
+      - TXT30
+    filter_scope: space
+  recent:
+    label: 最近查看
+    columns:
+      - LIFNR
+      - NAME1
+      - KTOKK
+      - TXT30
+    filter_scope: space
