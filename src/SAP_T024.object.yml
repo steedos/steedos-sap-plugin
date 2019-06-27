@@ -1,0 +1,24 @@
+name: SAP_T024
+label: 采购组
+icon: account
+fields:
+  EKGRP:
+    label: 采购组
+    type: text
+  EKNAM:
+    label: 采购组描述
+    type: text
+    is_name: true
+list_views:
+  all:
+    label: 所有
+    columns:
+      - EKGRP
+      - EKNAM
+    filter_scope: space
+  recent:
+    label: 最近查看
+    columns:
+      - EKGRP
+      - EKNAM
+    filter_scope: space
