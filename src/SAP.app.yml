@@ -10,3 +10,6 @@ objects:
   - SAP_PRPS
   - SAP_ASMDT
   - SAP_T024
+  - SAP_CSKT
+  - SAP_T163I
+  - SAP_T163Y

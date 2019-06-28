@@ -1,0 +1,24 @@
+name: SAP_CSKT
+label: 成本中心
+icon: account
+fields:
+  KTEXT:
+    label: 一般姓名 
+    type: text
+    is_name: true
+  KOSTL:
+    label: 成本中心
+    type: text
+list_views:
+  all:
+    label: 所有
+    columns:
+      - KTEXT
+      - KOSTL
+    filter_scope: space
+  recent:
+    label: 最近查看
+    columns:
+      - KTEXT
+      - KOSTL
+    filter_scope: space

@@ -15,6 +15,12 @@ const ZMM_PO_POSID = require('./lib/sap_api/ZMM_PO_POSID');
 const ZMM_PO_ASNUM = require('./lib/sap_api/ZMM_PO_ASNUM');
 // 采购组
 const ZMM_PO_EKGRP = require('./lib/sap_api/ZMM_PO_EKGRP');
+// 成本中心
+const ZMM_PO_KOSTL = require('./lib/sap_api/ZMM_PO_KOSTL');
+// 科目分配类别
+const ZMM_PO_KNTTP = require('./lib/sap_api/ZMM_PO_KNTTP');
+// 项目类别
+const ZMM_PO_EPSTP = require('./lib/sap_api/ZMM_PO_EPSTP');
 // 获取用款单
 const ZMM_ZOBJNR_GET = require('./lib/sap_api/ZMM_ZOBJNR_GET');
 // 获取PR行项目,物料
@@ -57,6 +63,12 @@ server.Fiber(function () {
                     ZMM_PO_ASNUM.run(steedosSchema);
                     // 获取采购组
                     ZMM_PO_EKGRP.run(steedosSchema);
+                    // 获取成本中心
+                    ZMM_PO_KOSTL.run(steedosSchema);
+                    // 获取科目分配类别
+                    ZMM_PO_KNTTP.run(steedosSchema);
+                    // 获取项目类别
+                    ZMM_PO_EPSTP.run(steedosSchema);
                     console.timeEnd('sap_sync_rule');
                 }, function () {
                     console.log('Failed to bind environment');

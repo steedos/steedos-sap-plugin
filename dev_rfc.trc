@@ -1,0 +1,119 @@
+
+**** Trace file opened at 2019-06-27, 13:02:00 中国标准时间
+RFC Library Release: 721 Patch Level 51, Compiled on Dec 13 2018 00:06:30
+ CPIC library: 721.2018.08.17 version 3, NI library: 40, Kernel Release: 721 Patch Level 0
+ Current working directory: C:\Users\steedos\Documents\Github\steedos-sap-plugin, Program: node
+ Hardware: PC with Windows NT 8x AMD64 Level 6 (Mod 158 Step 9), Operating_system: Windows NT 10.0
+ Hostname: LAPTOP-GLTA90QU, IP address: 192.168.137.1, IPv6 address: 192.168.137.1
+
+Error during connect: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '172.16.2.10:3300' not reached
+TIME        Thu Jun 27 13:02:00 2019
+RELEASE     721
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3289
+DETAIL      NiPConnect2: 172.16.2.10:3300
+SYSTEM CALL connect
+ERRNO       10065
+ERRNO TEXT  WSAEHOSTUNREACH: No route to host
+COUNTER     3
+
+
+Error during connect: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '172.16.2.10:3300' not reached
+TIME        Thu Jun 27 13:02:00 2019
+RELEASE     721
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3289
+DETAIL      NiPConnect2: 172.16.2.10:3300
+SYSTEM CALL connect
+ERRNO       10065
+ERRNO TEXT  WSAEHOSTUNREACH: No route to host
+COUNTER     4
+
+
+Error during connect: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '172.16.2.10:3300' not reached
+TIME        Thu Jun 27 13:02:00 2019
+RELEASE     721
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3289
+DETAIL      NiPConnect2: 172.16.2.10:3300
+SYSTEM CALL connect
+ERRNO       10065
+ERRNO TEXT  WSAEHOSTUNREACH: No route to host
+COUNTER     4
+
+
+Error during connect: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '172.16.2.10:3300' not reached
+TIME        Thu Jun 27 13:02:00 2019
+RELEASE     721
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3289
+DETAIL      NiPConnect2: 172.16.2.10:3300
+SYSTEM CALL connect
+ERRNO       10065
+ERRNO TEXT  WSAEHOSTUNREACH: No route to host
+COUNTER     3
+
+
+Error during connect: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '172.16.2.10:3300' not reached
+TIME        Thu Jun 27 13:02:00 2019
+RELEASE     721
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3289
+DETAIL      NiPConnect2: 172.16.2.10:3300
+SYSTEM CALL connect
+ERRNO       10065
+ERRNO TEXT  WSAEHOSTUNREACH: No route to host
+COUNTER     5
+
+
+Error during connect: 
+LOCATION    CPIC (TCP/IP) on local host with Unicode
+ERROR       partner '172.16.2.10:3300' not reached
+TIME        Thu Jun 27 13:02:00 2019
+RELEASE     721
+COMPONENT   NI (network interface)
+VERSION     40
+RC          -10
+MODULE      nixxi.cpp
+LINE        3289
+DETAIL      NiPConnect2: 172.16.2.10:3300
+SYSTEM CALL connect
+ERRNO       10065
+ERRNO TEXT  WSAEHOSTUNREACH: No route to host
+COUNTER     6
+
+
+
+**** Trace file opened at 2019-06-28, 15:46:28 中国标准时间
+RFC Library Release: 721 Patch Level 51, Compiled on Dec 13 2018 00:06:30
+ CPIC library: 721.2018.08.17 version 3, NI library: 40, Kernel Release: 721 Patch Level 0
+ Current working directory: C:\Users\steedos\Documents\Github\steedos-sap-plugin, Program: node
+ Hardware: PC with Windows NT 8x AMD64 Level 6 (Mod 158 Step 9), Operating_system: Windows NT 10.0
+ Hostname: LAPTOP-GLTA90QU, IP address: 192.168.137.1, IPv6 address: 192.168.137.1
+
+connection closed without message (CM_NO_DATA_RECEIVED)

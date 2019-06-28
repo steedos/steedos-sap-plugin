@@ -1,0 +1,29 @@
+name: SAP_T163Y
+label: 项目类别
+icon: account
+fields:
+  PSTYP:
+    label: 采购凭证中的项目类别编号
+    type: text
+  PTEXT:
+    label: 项目类别文本
+    type: text
+    is_name: true
+  EPSTP:
+    label: 采购凭证中的项目类别代码
+    type: text
+list_views:
+  all:
+    label: 所有
+    columns:
+      - PSTYP
+      - PTEXT
+      - EPSTP
+    filter_scope: space
+  recent:
+    label: 最近查看
+    columns:
+      - PSTYP
+      - PTEXT
+      - EPSTP
+    filter_scope: space

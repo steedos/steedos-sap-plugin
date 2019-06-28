@@ -1,0 +1,24 @@
+name: SAP_T163I
+label: 科目分配类别
+icon: account
+fields:
+  KNTTX:
+    label: 帐户分配类别描述
+    type: text
+    is_name: true
+  KNTTP:
+    label: 科目分配类别
+    type: text
+list_views:
+  all:
+    label: 所有
+    columns:
+      - KNTTX
+      - KNTTP
+    filter_scope: space
+  recent:
+    label: 最近查看
+    columns:
+      - KNTTX
+      - KNTTP
+    filter_scope: space
