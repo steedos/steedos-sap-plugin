@@ -19,10 +19,8 @@ $("#getOrderIdBtn").on('click', function (e) {
 
         success: function (responseText, status) {
             $(document.body).removeClass("loading");
-            if (responseText.errors) {
-                responseText.errors.forEach(function (e) {
-                    toastr.error(e.errorMessage);
-                });
+            if (!responseText.ok) {
+                toastr.error(responseText.msg);
                 return;
             }
 
