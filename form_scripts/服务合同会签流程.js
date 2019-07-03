@@ -32,3 +32,8 @@ $("#getOrderIdBtn").on('click', function (e) {
         }
     })
 })
+
+// 科目分配类别： 值为P(项目(服务采购)(无估价))的时候 WBS必填，其余情况下WBS不为必填
+$(".instance-form").on('instance-before-submit', function (e) {
+// TODO
+})
