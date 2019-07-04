@@ -24,7 +24,7 @@ $("#getOrderIdBtn").on('click', function (e) {
                 return;
             }
 
-            toastr.success(TAPi18n.__('Added successfully'));
+            toastr.success('生成采购订单成功！');
         },
         error: function (xhr, msg, ex) {
             $(document.body).removeClass("loading");
