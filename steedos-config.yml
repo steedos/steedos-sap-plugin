@@ -1,6 +1,6 @@
 env:
   PORT: 5000
-  ROOT_URL: http://127.0.0.1:5000
+  ROOT_URL: http://127.0.0.1/sap/
 datasources:
   default:
     connection:
@@ -14,19 +14,22 @@ public:
     store: "local"
     local:
       folder: "/storage"
+  webservices:
+    workflow:
+      url: "http://127.0.0.1/"
 cron:
-  -sap_sync_rule: "0 * * * *"
-  -sap_get_draft_rule: "0 * * * *"
+  -sap_sync_rule: "0 03 * * * *"
+  -sap_get_draft_rule: "0 15 * * * *"
 plugins:
   sap:
     abapConfig:
-      user: 'xxxxxx'
+      user: 'xxxx'
       passwd: '123456'
       ashost: '172.172.172.172'
       sysnr: '00'
       client: '300'
       lang: 'ZH'
-    spaceId: 'xxxxxxxxxxxx'
+    spaceId: 'p9s45jNmhRkyCnjpi'
     flows:
-      yongkuandan: 'flowId'
-      wuliao: 'flowId'
+      yongkuandan: '468b4caded61e2a13b89027c'
+      wuliao: '73c38583e4afff48aba584c6'
