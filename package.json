@@ -12,6 +12,7 @@
   "dependencies": {
     "@steedos/meteor-bundle-runner": "^1.1.6",
     "@steedos/objectql": "^0.0.17",
+    "cookies": "^0.7.3",
     "express": "^4.17.1",
     "fibers": "^3.1.1",
     "node-rfc": "^0.1.16",
