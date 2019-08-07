@@ -5,7 +5,7 @@ if (ins.current_step_name === '生成采购单号') {
 
     $("#getOrderIdBtn").on('click', function (e) {
         console.log('getOrderIdBtn click！');
-        var url = `${Meteor.settings.public.webservices.creator.url}/${Session.get("spaceId")}/draft_purchase/${Session.get("instanceId")}`;
+        var url = `${Meteor.settings.public.webservices.creator.url}/sap/${Session.get("spaceId")}/draft_purchase/${Session.get("instanceId")}`;
         var data = {};
         data = JSON.stringify(data);
         $(document.body).addClass("loading");
@@ -27,10 +27,11 @@ if (ins.current_step_name === '生成采购单号') {
                 }
 
                 toastr.success('生成采购单号成功！');
+                Steedos.subs["instance_data"].clear();
             },
             error: function (xhr, msg, ex) {
                 $(document.body).removeClass("loading");
-                toastr.error(msg);
+                toastr.error(xhr.responseJSON.msg);
             }
         })
     })

@@ -25,7 +25,9 @@ const ZMM_PO_EPSTP = require('./lib/sap_api/ZMM_PO_EPSTP');
 const ZMM_ZOBJNR_GET = require('./lib/sap_api/ZMM_ZOBJNR_GET');
 // 获取PR行项目,物料
 const Z_BAPI_REQUISITION_GETITEMSGW = require('./lib/sap_api/Z_BAPI_REQUISITION_GETITEMSGW');
-// router：生成采购订单
+// 获取物资采购订单
+const Z_GET_PO_INFO = require('./lib/sap_api/Z_GET_PO_INFO');
+
 const router = require('./lib/routes/router');
 server.Fiber(function () {
     server.Profile.run("Server startup", function () {
@@ -85,6 +87,9 @@ server.Fiber(function () {
                     // 获取PR行项目，物料
                     Z_BAPI_REQUISITION_GETITEMSGW.run();
 
+                    // 获取采购订单
+                    // xxxxx.run();
+
                     console.timeEnd('sap_get_draft_rule');
                 }, function () {
                     console.log('Failed to bind environment');
@@ -94,7 +99,7 @@ server.Fiber(function () {
             }
 
             let app = express();
-            app.use('/', router.router);
+            app.use('/sap', router.router);
             WebApp.connectHandlers.use(app);
         } catch (error) {
             console.log(error)
