@@ -36,3 +36,72 @@ yarn start
 docker-compose up -d
 ```
 如果修改了代码或者配置，执行`docker-compose build --no-cache`后，`docker-compose up -d`
+
+### sap同步服务准备工作
+- 配置steedos-config.yml， 启动steedos-sap-plugin
+```yml
+datasources:
+  default:
+    connection:
+      url: mongodb://127.0.0.1/steedos
+    objectFiles:
+      - "./src"
+    appFiles:
+      - "./src/SAP.app.yml"
+public:
+  cfs:
+    store: "local"
+    local:
+      folder: "/storage"
+  webservices:
+    workflow:
+      url: "http://127.0.0.1/"
+cron:
+  sap_sync_rule: "0 03 * * * *"
+  sap_get_draft_rule: "0 15 * * * *"
+plugins:
+  sap:
+    abapConfig:
+      user: 'xxx'
+      passwd: '123456'
+      ashost: '172.16.2.103'
+      sysnr: '00'
+      client: '300'
+      lang: 'ZH'
+    spaceId: 'xxx'
+    flows:
+      yongkuandan: 'xxx'
+      wuliao: 'xxx'
+      wuzicaigou: 'xxx'
+```
+- 设置流程的脚本：
+    - 服务合同会签流程（生成采购单号按钮）
+    - 用款审批流程（数据刷新按钮）
+    - 物资申购流程（数据刷新按钮）
+    - 物资采购订单审批流程（数据刷新按钮）
+- 配置流程的webhook，用于状态回传：
+    - 用款审批单
+    - 物资申购单
+    - 物资采购订单审批流程
+- 启动审批王服务，并配置settings
+```json
+{
+    "public": {
+        "webservices": {
+            "workflow": {
+                "url": "http://steedos.ticp.net:8821/"
+            },
+            "creator": {
+                "status": "active",
+                "url": "http://127.0.0.1/sap"
+            }
+        }
+    },
+    "cron": {
+        "webhookqueue_interval": 1000
+    }
+}
+```
+- 启动流程设计器后台服务steedos-server
+- 配置nginx
+
