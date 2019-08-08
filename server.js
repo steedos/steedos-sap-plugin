@@ -88,7 +88,7 @@ server.Fiber(function () {
                     Z_BAPI_REQUISITION_GETITEMSGW.run();
 
                     // 获取采购订单
-                    // xxxxx.run();
+                    Z_GET_PO_INFO.run();
 
                     console.timeEnd('sap_get_draft_rule');
                 }, function () {
