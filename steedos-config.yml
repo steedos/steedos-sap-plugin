@@ -23,9 +23,9 @@ cron:
 plugins:
   sap:
     abapConfig:
-      user: 'xxxx'
+      user: 'HONGHENG'
       passwd: '123456'
-      ashost: '172.172.172.172'
+      ashost: '172.16.2.10'
       sysnr: '00'
       client: '300'
       lang: 'ZH'
@@ -33,3 +33,4 @@ plugins:
     flows:
       yongkuandan: '468b4caded61e2a13b89027c'
       wuliao: '73c38583e4afff48aba584c6'
+      wuzicaigou: 'd6895cc919caceab39d34399'
