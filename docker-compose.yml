@@ -10,10 +10,6 @@ services:
     volumes:
       - /srv/workflow/cfs:/storage
       - /srv/git/steedos-sap-plugin/steedos-config.yml:/app/steedos-config.yml
+    environment:
+      - SAPNWRFC_HOME=/app/nwrfcsdk/linux
 
-
-# volumes:
-#   # Storage for attachments
-#   steedos-storage-1:
-#   mongo-db-1:
-#   mongo-backup-1:

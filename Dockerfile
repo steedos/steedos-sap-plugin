@@ -12,6 +12,9 @@ RUN yarn --force
 
 RUN yarn upgrade
 
+RUN echo # include nwrfcsdk >> /etc/ld.so.conf.d/nwrfcsdk.conf
+RUN echo /app/nwrfcsdk/linux/lib >> /etc/ld.so.conf.d/nwrfcsdk.conf
+
 VOLUME [ "/storage" ]
 
 CMD ["yarn", "start"]
