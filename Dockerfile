@@ -13,6 +13,7 @@ RUN yarn
 RUN yarn upgrade
 
 RUN echo /app/nwrfcsdk/linux/lib >> /etc/ld.so.conf.d/nwrfcsdk.conf
+RUN ldconfig
 
 VOLUME [ "/storage" ]
 
