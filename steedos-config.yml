@@ -20,17 +20,16 @@ public:
 cron:
   -sap_sync_rule: "0 03 * * * *"
   -sap_get_draft_rule: "0 15 * * * *"
-plugins:
-  sap:
-    abapConfig:
-      user: 'HONGHENG'
-      passwd: '123456'
-      ashost: '172.16.2.10'
-      sysnr: '00'
-      client: '300'
-      lang: 'ZH'
-    spaceId: 'p9s45jNmhRkyCnjpi'
-    flows:
-      yongkuandan: '468b4caded61e2a13b89027c'
-      wuliao: '73c38583e4afff48aba584c6'
-      wuzicaigou: 'd6895cc919caceab39d34399'
+sap:
+  abapConfig:
+    user: 'HONGHENG'
+    passwd: '123456'
+    ashost: '172.16.2.10'
+    sysnr: '00'
+    client: '300'
+    lang: 'ZH'
+  spaceId: 'p9s45jNmhRkyCnjpi'
+  flows:
+    yongkuandan: '468b4caded61e2a13b89027c'
+    wuliao: '73c38583e4afff48aba584c6'
+    wuzicaigou: 'd6895cc919caceab39d34399'
