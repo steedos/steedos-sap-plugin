@@ -20,6 +20,8 @@ public:
 cron:
   -sap_sync_rule: "0 03 * * * *"
   -sap_get_draft_rule: "0 15 * * * *"
+plugins:
+  - "@steedos/steedos-plugin-workflow"
 sap:
   abapConfig:
     user: 'HONGHENG'

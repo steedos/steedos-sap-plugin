@@ -12,6 +12,7 @@
   "dependencies": {
     "@steedos/meteor-bundle-runner": "^1.1.7",
     "@steedos/objectql": "^1.0.10",
+    "@steedos/steedos-plugin-workflow": "^1.0.1",
     "cookies": "^0.7.3",
     "express": "^4.17.1",
     "fibers": "^3.1.1",
