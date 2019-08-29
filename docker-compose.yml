@@ -6,7 +6,7 @@ services:
     build: .
     restart: unless-stopped
     ports:
-      - "5040:5000"
+      - "5000:5000"
     volumes:
       - /srv/workflow/cfs:/storage
       - /srv/git/steedos-sap-plugin/steedos-config.yml:/app/steedos-config.yml

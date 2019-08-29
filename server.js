@@ -1,5 +1,6 @@
 var server = require('@steedos/meteor-bundle-runner');
 var objectql = require("@steedos/objectql");
+var steedos = require('@steedos/core')
 var path = require('path');
 var schedule = require('node-schedule');
 var express = require('express');
@@ -32,6 +33,7 @@ const router = require('./lib/routes/router');
 server.Fiber(function () {
     server.Profile.run("Server startup", function () {
         server.loadServerBundles();
+        steedos.init();
         try {
             let objects = objectql.loadObjectFiles(path.resolve(__dirname, "./src"))
             let apps = objectql.loadAppFiles(path.resolve(__dirname, "./src"))
