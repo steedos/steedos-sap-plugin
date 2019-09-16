@@ -1,0 +1,7 @@
+_id: WORKFLOW
+name: 审批
+description: 审批
+icon_slds: metrics
+is_creator: true
+objects:
+  - instances

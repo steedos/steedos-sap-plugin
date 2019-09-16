@@ -1,6 +1,6 @@
 env:
   PORT: 5000
-  ROOT_URL: http://127.0.0.1/sap/
+  ROOT_URL: http://127.0.0.1/
 datasources:
   default:
     connection:
@@ -9,6 +9,7 @@ datasources:
       - "./src"
     appFiles:
       - "./src/SAP.app.yml"
+      - "./src/WORKFLOW.app.yml"
 public:
   cfs:
     store: "local"
